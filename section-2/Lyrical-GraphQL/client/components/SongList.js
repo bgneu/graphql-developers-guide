@@ -6,7 +6,7 @@ const SongList = (props) => {
   const renderSongs = () => {
     return props.data.songs.map(song => {
       return (
-        <li key={song.id}>
+        <li key={song.id} className="collection-item">
           {song.title}
         </li>
       )
@@ -14,9 +14,9 @@ const SongList = (props) => {
   }
 
   return (
-    <div>
+    <ul className="collection">
       {props.data.loading ? 'Loading...' : renderSongs()}
-    </div>
+    </ul>
   )
 }
 
