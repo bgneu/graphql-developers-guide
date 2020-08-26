@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
-const SongList = (props) => {
-  const renderSongs = () => {
-    return props.data.songs.map(song => {
+class SongList extends Component {
+  renderSongs() {
+    return this.props.data.songs.map(song => {
       return (
         <li key={song.id} className="collection-item">
           {song.title}
@@ -13,11 +13,13 @@ const SongList = (props) => {
     })
   }
 
-  return (
-    <ul className="collection">
-      {props.data.loading ? 'Loading...' : renderSongs()}
-    </ul>
-  )
+  render() {
+    return (
+      <ul className="collection">
+        {this.props.data.loading ? 'Loading...' : this.renderSongs()}
+      </ul>
+    )
+  }
 }
 
 const query = gql`
