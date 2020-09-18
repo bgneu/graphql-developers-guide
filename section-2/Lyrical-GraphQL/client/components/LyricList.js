@@ -4,11 +4,18 @@ import { graphql } from 'react-apollo'
 import { Link } from 'react-router'
 
 class LyricList extends Component {
+  onLike() {
+
+  }
+
   renderLyrics() {
     return this.props.lyrics.map(({ id, content }) => {
       return (
         <li key={id} className="collection-item">
           {content}
+          <i className="material-icons" onClick={() => this.onLike(id)}>
+            thumb_up
+          </i>
         </li>
       )
     })
