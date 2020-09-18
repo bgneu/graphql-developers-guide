@@ -13,6 +13,7 @@ class SongDetail extends Component {
 
     return (
       <div>
+        <Link to="/">Back</Link>
         <h3>{song.title}</h3>
       </div>
     )
