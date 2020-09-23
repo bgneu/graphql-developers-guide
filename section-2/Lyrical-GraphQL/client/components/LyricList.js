@@ -39,7 +39,6 @@ const mutation = gql`
     likeLyric(id: $id) {
       id
       likes
-      content
     }
   }
 `
