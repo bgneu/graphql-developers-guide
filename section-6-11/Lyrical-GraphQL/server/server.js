@@ -8,7 +8,8 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = '';
+// Replace this URI with your URI connection to MongoDB Atlas
+const MONGO_URI = 'mongodb+srv://yourusername:yourpassword@lyrical-graphql.6ffnr.mongodb.net/yourdbname?retryWrites=true&w=majority'
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
